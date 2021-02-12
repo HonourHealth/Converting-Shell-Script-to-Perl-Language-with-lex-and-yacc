@@ -1,0 +1,10 @@
+all: yacc lex
+	cc lex.yy.c y.tab.c -o deneme -lfl
+
+yacc: onur.y
+	yacc -d onur.y
+
+lex: onur.l
+	lex onur.l
+
+In order to run and build my converter you can use above code snippet as makefile or you can write them manually to terminal one by one starting from bottom.If you choose makefile, create a file, name it as makefile copy above content then paste it inside makefile and write terminal make command.Do not forget to be in the same directory with code files.When you want to run the program you must first write executable file name with ./ for example above it is ./deneme then write input file name for example example1.sh then output name for example output1.pl (It must looks like something like that ./deneme example1.sh output1.pl) After that converted code must be written in output file which is output1.pl in our case.
